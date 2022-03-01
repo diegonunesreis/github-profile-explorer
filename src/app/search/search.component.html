@@ -1,12 +1,18 @@
 <section id="search">
   <mat-card>
-    <input type="text" />
+    <input type="text"
+      [(ngModel)]="searchText"
+      (keydown.enter)="submitSearch()" />
     <button mat-button
       type="button"
-      class="btn bg-blue">
+      (click)="submitSearch()">
+      Search
       <i class="fas fa-search"></i>
     </button>
-    <button mat-button>Basic</button>
-
+    <button type="button"
+      class="btn btn-primary"
+      tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      Simple demo
+    </button>
   </mat-card>
 </section>

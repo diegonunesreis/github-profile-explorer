@@ -1,1 +1,33 @@
-<p>search-results works!</p>
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 p-4">
+        <a routerLink="/"
+          class="text-decoration-none text-dark">
+          <i class="fa-brands fa-github fa-xl"></i>
+          <span class="ms-2 heading-title">Profile Explorer</span>
+        </a>
+        <div class="searchBoxForm ms-4">
+          <input type="search"
+            class="searchBox"
+            [(ngModel)]="searchText"
+            (keydown.enter)="submitSearch()" />
+          <button type="button"
+            class="btn btn-link me-2"
+            id="submit-btn"
+            tooltip="search"
+            (click)="submitSearch()">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content px-2">
+  <div class="container-fluid">
+    <span *ngFor="let item of resultItems">
+      <app-result-item [resultItem]="item"></app-result-item>
+    </span>
+  </div>
+</section>

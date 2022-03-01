@@ -8,13 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'github-profile-explorer';
 
-  constructor(public githubService: GithubService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.githubService.getUserByUsername('diegonunesreis')
-      .subscribe((res: any) => {
-        console.log(res);
-      });
+    
   }
 
 
