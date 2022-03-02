@@ -80,8 +80,19 @@
   </div>
 </section>
 
+<section *ngIf="isSearchLoading">
+  <div class="d-flex justify-content-center p-4">
+    <div class="spinner-border"
+      style="width: 3rem; height: 3rem;"
+      role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</section>
+
 <section id="searchItems"
-  class="content px-2">
+  class="content px-2"
+  [class.hide-section]="isSearchLoading">
   <div class="container-fluid">
     <span *ngFor="let item of searchResult.items | paginate: { 
       id: 'searchResults',

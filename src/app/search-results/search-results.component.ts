@@ -22,6 +22,7 @@ export class SearchResultsComponent implements OnInit {
   starsRange: number = 0;
   repoFilter: string = '';
   isCollapsed = true;
+  isSearchLoading = false;
 
   selectedSort: any;
   sortOptions: any = [
@@ -44,11 +45,18 @@ export class SearchResultsComponent implements OnInit {
   }
 
   searchUsers(): void {
+    this.isSearchLoading = true;
     this.githubService.searchByUsername(this.searchText, this.pageSize, this.page, this.selectedSort)
       .subscribe((res: UsersSearchResult) => {
-        console.log(res);
         this.searchResult = res;
+        this.hideSpinner();
       });
+  }
+
+  hideSpinner(): void {
+    setTimeout(() => {
+      this.isSearchLoading = false;
+    }, 400);
   }
 
   submitSearch(): void {
