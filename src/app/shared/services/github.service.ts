@@ -17,7 +17,7 @@ export class GithubService {
   // Headers
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': `Basic ${btoa(environment.githubToken)}`
+    'Authorization': `Basic ${environment.githubToken}`
   });
 
   // Retrieve user by its username
@@ -41,7 +41,7 @@ export class GithubService {
       }
     });
 
-    if(sort_params){
+    if (sort_params) {
       params = params.set('sort', sort_params.sort);
       params = params.set('order', sort_params.order);
     }

@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   apiURL: 'https://api.github.com',
-  githubToken: 'diegonunesreis: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'
+  githubToken: 'ZGllZ29udW5lc3JlaXM6Z2hwX0pDUVM4OVNSYUtiRHcwdUtEbXdhcmR2cFVLNU1PdDBYOFBmWQ=='
 };
