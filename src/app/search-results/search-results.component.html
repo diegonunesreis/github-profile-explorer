@@ -92,7 +92,8 @@
 
 <section id="searchItems"
   class="content px-2"
-  [class.hide-section]="isSearchLoading">
+  [class.hide-section]="isSearchLoading"
+  *ngIf="searchResult.total_count > 0">
   <div class="container-fluid">
     <span *ngFor="let item of searchResult.items | paginate: { 
       id: 'searchResults',
@@ -109,5 +110,13 @@
     <pagination-controls id="searchResults"
       (pageChange)="pageChanged($event)">
     </pagination-controls>
+  </div>
+</section>
+<section id="noResults"
+  class="content px-2"
+  [class.hide-section]="isSearchLoading"
+  *ngIf="searchResult.total_count == 0">
+  <div class="d-flex justify-content-center p-4">
+    <h3>User not found</h3>
   </div>
 </section>

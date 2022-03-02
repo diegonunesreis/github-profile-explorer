@@ -53,12 +53,6 @@ export class SearchResultsComponent implements OnInit {
       });
   }
 
-  hideSpinner(): void {
-    setTimeout(() => {
-      this.isSearchLoading = false;
-    }, 400);
-  }
-
   submitSearch(): void {
     if (this.searchText.trim().length === 0) {
       return;
@@ -134,6 +128,12 @@ export class SearchResultsComponent implements OnInit {
 
   getStarsRangeText(num: number): string {
     return num === 0 ? "Any" : `< ${this.getStarsRange(num)}`;
+  }
+
+  hideSpinner(): void {
+    setTimeout(() => {
+      this.isSearchLoading = false;
+    }, 400);
   }
 }
 

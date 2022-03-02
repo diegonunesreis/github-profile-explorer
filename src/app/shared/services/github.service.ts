@@ -86,6 +86,9 @@ export class GithubService {
     } else {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      if(error.status == '0'){
+        alert(`There seems to be a problem with the network connection. \nDetails: ${error.message}`);
+      }
     }
     return throwError(() => {
       return errorMessage;
