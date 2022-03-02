@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { tap } from 'rxjs';
 import { User } from '../shared/interfaces/user';
+import { UserRepos } from '../shared/interfaces/user-repos';
 import { ResultItem } from '../shared/interfaces/users-search-result';
 import { GithubService } from '../shared/services/github.service';
 
@@ -12,6 +13,9 @@ import { GithubService } from '../shared/services/github.service';
 export class ResultItemComponent implements OnInit {
 
   @Input() resultItem: ResultItem | undefined;
+  @Output() setStars = new EventEmitter();
+  @Output() setRepos = new EventEmitter();
+
   user: User | undefined;
   starsAmount: string | undefined = '';
 
@@ -20,6 +24,7 @@ export class ResultItemComponent implements OnInit {
   ngOnInit(): void {
     this.getUserData();
     this.getUserStars();
+    this.getUserRepos();
   }
 
   getUserStars() {
@@ -28,6 +33,7 @@ export class ResultItemComponent implements OnInit {
         tap(res => {
           const Link = this.parse_link_header(res.headers.get('Link'));
           this.starsAmount = Link ? Link['last'].replace(/.*&page=(.*)/, '$1').trim() : '0';
+          this.setStars.emit({ login: this.resultItem?.login, starsAmount: this.starsAmount });
         })
       ).subscribe();
   }
@@ -36,7 +42,13 @@ export class ResultItemComponent implements OnInit {
     this.githubService.getUserByUsername(this.resultItem?.login!)
       .subscribe((res: User) => {
         this.user = res;
-        console.log(this.user);
+      });
+  }
+
+  getUserRepos() {
+    this.githubService.getReposByUsername(this.resultItem?.login!)
+      .subscribe((res: UserRepos) => {
+        this.setRepos.emit({ login: this.resultItem?.login, repos: res });
       });
   }
 
@@ -54,5 +66,4 @@ export class ResultItemComponent implements OnInit {
     });
     return links;
   }
-
 }

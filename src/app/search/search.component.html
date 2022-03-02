@@ -1,18 +1,23 @@
-<section id="search">
-  <mat-card>
-    <input type="text"
-      [(ngModel)]="searchText"
-      (keydown.enter)="submitSearch()" />
-    <button mat-button
-      type="button"
-      (click)="submitSearch()">
-      Search
-      <i class="fas fa-search"></i>
-    </button>
-    <button type="button"
-      class="btn btn-primary"
-      tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-      Simple demo
-    </button>
-  </mat-card>
-</section>
+<div class="center">
+  <section id="logo"
+    class="mb-4">
+    <i class="fa-brands fa-github me-2"></i>
+    <span class="title">Profile Explorer</span>
+  </section>
+  <section id="search">
+    <form class="searchBoxForm">
+      <input type="search"
+        name="searchtextInput"
+        class="searchBox roundedBox"
+        [(ngModel)]="searchText"
+        (keydown.enter)="submitSearch()" />
+      <button type="button"
+        class="btn btn-link"
+        id="submit-btn"
+        tooltip="search"
+        (click)="submitSearch()">
+        <i class="fas fa-search fa-lg"></i>
+      </button>
+    </form>
+  </section>
+</div>
