@@ -1,4 +1,3 @@
-import { GithubService } from './shared/services/github.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +9,5 @@ export class AppComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-  }
-
-
+  ngOnInit(): void { }
 }

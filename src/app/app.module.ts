@@ -23,13 +23,13 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     ResultItemComponent
   ],
   imports: [
+    NgxPaginationModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
     TooltipModule.forRoot(),
-    NgxPaginationModule,
     CollapseModule.forRoot()
   ],
   providers: [],

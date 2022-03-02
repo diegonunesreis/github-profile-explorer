@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SearchResultsComponent } from './search-results.component';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('SearchResultsComponent', () => {
   let component: SearchResultsComponent;
@@ -8,7 +10,12 @@ describe('SearchResultsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchResultsComponent ]
+      declarations: [ SearchResultsComponent ],
+      imports: [
+        RouterTestingModule, 
+        HttpClientTestingModule,
+        NgxPaginationModule
+      ],
     })
     .compileComponents();
   });
