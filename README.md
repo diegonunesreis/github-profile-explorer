@@ -1,28 +1,63 @@
-# GithubProfileExplorer
+# Github Profile Explorer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Simple application that allows you to search for github users based on their username. 
 
-## Development server
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Installation](#installation)
+* [Running Application](#running-application)
+* [Unit Tests](#running-unit-tests)
+* [End-to-End Tests](#running-end-to-end-tests)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## General info
+Simple application that allows to search for github users based on their username. It implements all types of sorts available in the Github API for user searches, and makes it possible to filter these obtained results, through the name of the repository and/or the number of stars that the user has. This also implements pagination.
 
-## Code scaffolding
+![Crypress Initial Screen](readme/demo.gif)
+	
+## Technologies
+Project is created with:
+* Angular version: 13.0.3
+* Bootstrap version: 5
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
+### Platform & tools
 
-## Build
+You need to install Node.js and then the development tools. Node.js comes with a package manager called [npm](http://npmjs.org) for installing NodeJS applications and libraries.
+* [Install node.js](https://nodejs.org/) 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Get the Code
+
+Either clone this repository or fork it on GitHub and clone your fork:
+
+```
+git clone https://github.com/diegonunesreis/github-profile-explorer.git
+cd github-profile-explorer
+```
+
+Install local dependencies (from the project root folder):
+```
+npm install
+```
+(This will install the dependencies declared in the ./package.json file)
+
+
+## Running Application
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+![Karma](readme/karma.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Running end-to-end tests 
 
-## Further help
+Run `npm run cypress:open` to execute the end-to-end tests via cypress. When this starts, the Cypress splash screen will appear, listing the written tests.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# github-profile-explorer
+![Crypress Initial Screen](readme/cypress-1.png)
+
+When you start the testing process, a page will open in your default browser, where Crypress will start to interact and test the application.
+
+![Crypress Testing Screen](readme/cypress-2.png)
