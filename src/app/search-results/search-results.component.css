@@ -1,13 +1,21 @@
 .heading-title {
   font-size: 1rem;
   font-weight: 700;
+  display: unset;
 }
 
 #submit-btn {
   box-shadow: unset;
 }
 
+#searchOptions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .searchBoxForm {
+  margin-left: 1.5rem;
   border-radius: 24px;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 2px 4px 1px rgb(0 0 0 / 9%);
   display: inline-block;
@@ -37,4 +45,55 @@
 
 .hide-section {
   display: none;
+}
+
+.starsRangeNum {
+  width: 100px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #searchOptions {
+    flex-direction: column;
+  }
+
+  .searchBox {
+    min-width: unset;
+  }
+
+  .vr {
+    display: none;
+  }
+
+  #searchOptions>* {
+    margin: .5rem 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .heading-title {
+    display: none;
+  }
+
+  .searchItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fa-github {
+    font-size: 2em;
+    padding-bottom: 1.5rem;
+  }
+
+  .searchBoxForm {
+    margin: unset;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .searchBox {
+    width: 100px;
+  }
 }

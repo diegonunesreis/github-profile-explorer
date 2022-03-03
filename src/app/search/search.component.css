@@ -33,6 +33,8 @@
 .title {
   font-size: 2rem;
   font-weight: 700;
+  display: unset;
+  margin: 0;
 }
 
 .searchBoxForm {
@@ -52,4 +54,10 @@
   padding: 0 20px;
   height: 40px;
   min-width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .searchBox {
+    min-width: unset;
+  }
 }

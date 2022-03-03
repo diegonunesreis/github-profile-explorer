@@ -9,10 +9,10 @@ describe('SearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchComponent ],
+      declarations: [SearchComponent],
       imports: [RouterTestingModule],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
