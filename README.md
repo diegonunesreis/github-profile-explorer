@@ -17,8 +17,10 @@ Simple application that allows to search for github users based on their usernam
 	
 ## Technologies
 Project is created with:
-* Angular version: 13.0.3
-* Bootstrap version: 5
+* [Angular](https://angular.io/) version: 13.0.3
+* [Bootstrap](https://getbootstrap.com/) version: 5
+* [Jasmine](https://jasmine.github.io/) for unit testing
+* [Cypress](https://docs.cypress.io/) for End-to-End testing
 
 ## Installation
 ### Platform & tools
